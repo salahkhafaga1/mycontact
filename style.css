@@ -1,104 +1,121 @@
-        :root {
-            --bg-color: #0b1120; /* لون الخلفية الكحلي */
-            --grid-color: rgba(255, 255, 255, 0.05);
-            --text-color: #ffffff;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --hover-color: #ffffff;
-            --accent-color: #3b82f6;
-        }
+/* إعدادات عامة لتنظيم المسافات */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+/* تنسيق هيكل الصفحة (Body) */
+body {
+    font-family: 'Cairo', 'Roboto', sans-serif;
+    background-color: #0b1120; /* لون الخلفية الكحلي */
+    color: #ffffff;
+    
+    /* التوسيط باستخدام الفليكس بوكس الأساسي */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    /* تأثير الشبكة (Grid) في الخلفية */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
 
-        body {
-            font-family: 'Cairo', 'Roboto', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            /* تأثير الشبكة (Grid) في الخلفية */
-            background-image: 
-                linear-gradient(var(--grid-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
+/* الحاوية الرئيسية للعناصر */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
 
-        .container {
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-        }
+/* تنسيق الصورة الشخصية */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #3b82f6; /* اللون الأزرق المميز */
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
 
-        /* تنسيق الصورة الشخصية */
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--accent-color);
-            object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-        }
+/* العناوين الأساسية */
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
 
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
+.title {
+    color: #94a3b8;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
 
-        .title {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            font-family: 'Roboto', sans-serif; /* للإنجليزي */
-        }
+/* حاوية الروابط */
+.links {
+    width: 100%;
+}
 
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+/* تنسيق أزرار الروابط الأساسي */
+.link-btn {
+    display: block; /* لجعل الزر يأخذ عرض السطر بالكامل */
+    text-align: center;
+    padding: 15px 20px;
+    margin-bottom: 15px; /* مسافة أسفل كل زر */
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    text-decoration: none; /* إزالة الخط السفلي من الرابط */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    position: relative; /* مهم جداً لتحديد مكان الأيقونة بداخله */
+    transition: all 0.3s ease; /* حركة ناعمة عند مرور الماوس */
+}
 
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* توسيط المحتوى */
-            padding: 15px 20px;
-            background: var(--card-bg);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            font-size: 1.1rem;
-            position: relative;
-        }
+/* تنسيق الأيقونة داخل الزر */
+.link-btn i {
+    position: absolute;
+    right: 20px; /* مكان الأيقونة على اليمين */
+    top: 50%;
+    transform: translateY(-50%); /* توسيط الأيقونة عمودياً بدقة */
+    font-size: 22px;
+}
 
-        .link-btn i {
-            position: absolute;
-            right: 20px; /* مكان الأيقونة يمين */
-            font-size: 1.4rem;
-        }
+/* تأثيرات مرور الماوس (Hover) */
+.link-btn:hover {
+    transform: translateY(-3px); /* تحريك الزر لأعلى قليلاً */
+    background-color: rgba(255, 255, 255, 0.1);
+}
 
-        /* ألوان الهوفر لكل منصة */
-        .link-btn:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.1);
-        }
+.linkedin:hover { 
+    border-color: #0077b5; 
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.4); 
+}
 
-        .linkedin:hover { border-color: #0077b5; box-shadow: 0 0 15px rgba(0, 119, 181, 0.4); }
-        .facebook:hover { border-color: #1877f2; box-shadow: 0 0 15px rgba(24, 119, 242, 0.4); }
-        .whatsapp:hover { border-color: #25d366; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
+.facebook:hover { 
+    border-color: #1877f2; 
+    box-shadow: 0 0 15px rgba(24, 119, 242, 0.4); 
+}
 
-        footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #64748b;
-        }
+.whatsapp:hover { 
+    border-color: #25d366; 
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); 
+}
+
+.feedback:hover { 
+    border-color: #10b981; 
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); 
+}
+
+/* تذييل الصفحة */
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #64748b;
+}
